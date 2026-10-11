@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nova Fitness — Transforma tu cuerpo en 90 días</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== COLORES: cambia aquí la marca del gimnasio ===== */
+:root{--bg:#0a0a0a;--card:#101010;--fg:#fff;--mut:#8a8a8a;--line:#222;--y:#ffd60a;--ink:#000;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--card:#101010;--fg:#fff;--mut:#8a8a8a;--line:#222}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--card:#101010;--fg:#fff;--mut:#8a8a8a;--line:#222}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.5 Inter,Arial,sans-serif}
+.h{font-family:'Archivo Black',Impact,'Arial Black',sans-serif;text-transform:uppercase;line-height:.95;letter-spacing:-.01em}
+.y{color:var(--y)}.g{color:#3a3a3a}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+nav small{color:var(--mut);font-weight:600}
+.btn{display:inline-block;background:var(--y);color:var(--ink);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:14px;padding:18px 28px;text-decoration:none}
+.btn.w{background:#fff;padding:12px 18px;font-size:12px}
+.btn.k{background:#000;color:#fff}
+.lnk{color:var(--mut);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;margin-left:20px}
+.hero{text-align:center;padding:80px 0 72px;border:0}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:28px}
+.hero h1{font-size:clamp(40px,9vw,104px);margin-bottom:28px}
+.hero h1 span.box{display:inline-block;border:3px solid #fff;padding:4px 14px;margin-top:10px}
+.hero p{max-width:560px;margin:0 auto 32px;color:var(--mut);font-size:18px}
+.hero p b{color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:22px 20px;border-right:1px solid var(--line);font-size:12px;color:var(--mut);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.stats div:last-child{border:0}.stats b{display:block;font:400 28px 'Archivo Black',Impact,sans-serif;color:#fff;letter-spacing:0}
+.stats b.y{color:var(--y)}
+.tag{display:inline-block;background:#fff;color:#000;font-size:10px;font-weight:800;letter-spacing:.14em;padding:4px 8px;margin-bottom:16px;text-transform:uppercase}
+h2{font-size:clamp(32px,6vw,64px);margin-bottom:36px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.cards article{padding:28px;border-right:1px solid var(--line);background:var(--card)}
+.cards article:last-child{border:0}
+.cards h3{font-size:16px;text-transform:uppercase;font-weight:800;margin:14px 0 8px}
+.cards p,.step p{color:var(--mut);font-size:14px}
+.step{display:grid;grid-template-columns:90px 1fr;gap:18px;padding:26px;border:1px solid var(--line);border-top:0;background:var(--card)}
+.steps{border-top:1px solid var(--line)}
+.step i{font:normal 400 54px 'Archivo Black',Impact,sans-serif;color:#1d1d1d}
+.step h3{font-size:20px;text-transform:uppercase;font-weight:800;margin-bottom:6px}
+.mark{display:inline-block;background:var(--y);color:#000;padding:0 12px}
+.light{background:#fff;color:#000;border:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.light h2{margin-bottom:20px}
+.quote{border-left:4px solid #000;padding-left:14px;font-weight:600;margin:20px 0}
+.list{border:1px solid #000}
+.list div{padding:16px 18px;border-bottom:1px solid #000;font-size:14px;color:#444}
+.list b{display:block;color:#000;text-transform:uppercase;font-size:15px}
+.list b:before{content:"✔ ";}
+.price{background:#000;color:#fff;padding:22px 18px}
+.price s{color:#777;font-size:12px;font-weight:800;letter-spacing:.1em}
+.price strong{display:block;font:400 34px 'Archivo Black',Impact,sans-serif;margin:6px 0}
+.case{border:1px solid var(--line);padding:28px;background:var(--card);max-width:620px}
+.case .row{display:flex;justify-content:space-between;align-items:end;margin:20px 0;font-size:12px;color:var(--mut);font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.case .row b{display:block;font:400 34px 'Archivo Black',Impact,sans-serif;color:#fff}
+.bars{display:flex;align-items:end;gap:6px;height:90px}
+.bars span{flex:1;background:#222}.bars span.on{background:var(--y)}
+.yn{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+.yn div{padding:28px;background:var(--card)}.yn div+div{border-left:1px solid var(--line)}
+.yn h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.yn p{font-size:14px;font-weight:600;color:#ccc;margin-bottom:12px}
+.yn .no p{color:#555;text-decoration:line-through}
+.guar{border:3px solid var(--y);padding:52px 28px 40px;text-align:center;position:relative;max-width:820px;margin:0 auto}
+.guar .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--y);color:#000;white-space:nowrap}
+.guar h2{margin-bottom:18px}.guar p{color:var(--mut);max-width:560px;margin:0 auto}
+.guar p b{color:#fff}
+details{border:1px solid var(--line);border-top:0;background:var(--card)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:20px;font-weight:800;text-transform:uppercase;font-size:14px;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--y)}details[open] summary::after{content:"–"}
+details p{padding:0 20px 20px;color:var(--mut);font-size:14px}
+.cta{background:var(--y);color:#000;text-align:center;border:0}
+.cta h2{font-size:clamp(40px,8vw,88px)}.cta small{display:block;margin-top:20px;font-size:12px;font-weight:600;opacity:.7}
+footer{padding:36px 20px;font-size:11px;color:#555;border-top:1px solid var(--line);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+footer span{display:block;color:#333;font-weight:400;text-transform:none;letter-spacing:0;margin-top:10px;max-width:640px}
+@media(max-width:760px){.cards,.two,.yn,.stats{grid-template-columns:1fr}.cards article,.stats div{border-right:0;border-bottom:1px solid var(--line)}.yn div+div{border-left:0;border-top:1px solid var(--line)}.step{grid-template-columns:56px 1fr}.step i{font-size:34px}nav small{display:none}.lnk{display:block;margin:18px 0 0}}
+</style>
+</head>
+<body>
+<nav><span>Nova Fitness <small>· 50 cupos de lanzamiento</small></span><a class="btn w" href="#unete">Prueba gratis →</a></nav>
+
+<!-- HERO: cambia el titular y el texto -->
+<section class="hero"><div class="wrap">
+<span class="pill">● Abierto de 6 a. m. a 11 p. m.</span>
+<h1 class="h">Transforma tu cuerpo en <span class="y">90 días.</span><br><span class="box">Sin excusas.</span></h1>
+<p>Entrenadores certificados, plan personalizado y seguimiento semanal. <b>Si no ves resultados, el mes siguiente es gratis.</b></p>
+<a class="btn" href="#unete">Reserva tu clase gratis →</a><a class="lnk" href="#casos">Ver resultados ↓</a>
+</div></section>
+
+<div class="stats"><div><b>+1,200</b>Socios activos</div><div><b>12</b>Entrenadores</div><div><b class="y">4.9★</b>Valoración</div></div>
+
+<section><div class="wrap">
+<span class="tag">El problema</span>
+<h2 class="h">Los gimnasios comunes <span class="g">te dejan solo.</span></h2>
+<div class="cards">
+<article>✕<h3>Máquinas sin guía</h3><p>Pagas la mensualidad, no sabes qué hacer y abandonas en tres semanas.</p></article>
+<article>✕<h3>Planes genéricos</h3><p>La misma rutina para todos. Tu cuerpo y tus metas no son los de nadie más.</p></article>
+<article>✕<h3>Nadie te sigue</h3><p>Si faltas una semana, nadie lo nota. Sin seguimiento no hay resultados.</p></article>
+</div></div></section>
+
+<section><div class="wrap">
+<h2 class="h">El método <span class="mark">Nova 90™</span></h2>
+<div class="steps">
+<div class="step"><i>01</i><div><h3>Evaluación inicial gratis</h3><p>Medimos tu punto de partida: peso, medidas y objetivo. Sin compromiso.</p></div></div>
+<div class="step"><i>02</i><div><h3>Plan hecho para ti</h3><p>Rutina y clases según tu horario. Ajustada cada semana por tu entrenador.</p></div></div>
+<div class="step"><i>03</i><div><h3>Seguimiento y comunidad</h3><p>Control mensual, retos grupales y alertas si faltas. Aquí nadie se queda solo.</p></div></div>
+</div></div></section>
+
+<section class="light"><div class="wrap two">
+<div><span class="tag" style="background:#000;color:#fff">Todo incluido</span>
+<h2 class="h">Qué obtienes al unirte</h2>
+<p class="quote">No es solo un gimnasio. Es un sistema para que llegues a tu meta.</p>
+<a class="btn k" href="#unete">Solo 50 cupos →</a></div>
+<div class="list">
+<div><b>Acceso total 6 a. m. – 11 p. m.</b>Sala de pesas, cardio y funcional.</div>
+<div><b>Plan personalizado</b>Rutina diseñada por un entrenador certificado.</div>
+<div><b>Clases grupales ilimitadas</b>Spinning, funcional y baile.</div>
+<div><b>Control mensual de progreso</b>Medidas, fotos y metas.</div>
+<div class="price"><s>VALOR TOTAL S/ 260 / MES</s><strong>Desde S/ 80 al mes</strong>Plan trimestral S/ 210 · Anual S/ 700</div>
+</div></div></section>
+
+<section id="casos"><div class="wrap">
+<h2 class="h">Resultados. <span class="g">No promesas.</span></h2>
+<div class="case"><span class="y" style="font-size:11px;font-weight:800;letter-spacing:.12em">CASO 01 · EJEMPLO</span>
+<h3 class="h" style="font-size:26px;margin-top:10px">María, 34 años</h3>
+<div class="row"><div>Antes<b style="color:#666">78 kg</b></div><div>Ahora<b class="y">66 kg</b></div></div>
+<div class="bars"><span style="height:20%"></span><span style="height:28%"></span><span style="height:35%"></span><span style="height:42%"></span><span style="height:50%"></span><span style="height:62%"></span><span class="on" style="height:78%"></span><span class="on" style="height:88%"></span><span class="on" style="height:100%"></span></div></div>
+</div></section>
+
+<section><div class="wrap yn">
+<div><h4 class="y">■ Es para ti si:</h4><p>✓ Quieres resultados y no solo un lugar para entrenar</p><p>✓ Puedes venir 3 veces por semana</p><p>✓ Quieres que alguien te guíe y te siga</p></div>
+<div class="no"><h4 style="color:#f44">■ No es para ti si:</h4><p>✕ Buscas resultados mágicos sin esfuerzo</p><p>✕ Solo quieres el precio más barato</p><p>✕ No piensas venir con constancia</p></div>
+</div></section>
+
+<section><div class="wrap"><div class="guar"><span class="tag">Garantía Nova</span>
+<h2 class="h">Resultados en 90 días o el <span class="y">mes gratis</span></h2>
+<p>Si cumples tu plan y en 90 días no ves progreso medible, <b>te regalamos un mes</b>. Sin letra pequeña.</p></div></div></section>
+
+<section><div class="wrap two">
+<div><h2 class="h">Preguntas frecuentes</h2></div>
+<div>
+<details open><summary>¿Cuánto cuesta?</summary><p>Desde S/ 80 al mes. También hay plan trimestral y anual con descuento.</p></details>
+<details><summary>¿Hay contrato de permanencia?</summary><p>No. Pagas mes a mes y puedes cancelar cuando quieras.</p></details>
+<details><summary>¿Puedo probar antes?</summary><p>Sí. Tu primera clase y la evaluación inicial son gratis.</p></details>
+<details><summary>¿Cuándo veo resultados?</summary><p>La mayoría nota cambios entre la semana 4 y la 6, si sigue su plan.</p></details>
+</div></div></section>
+
+<section class="cta" id="unete"><div class="wrap">
+<h2 class="h">¿Listo para empezar?</h2><br>
+<a class="btn k" href="https://wa.me/51999999999">Reservar por WhatsApp →</a>
+<small>Respondemos en menos de 24 h · Solo 50 cupos de lanzamiento</small>
+</div></section>
+
+<footer>Nova Fitness © 2026 · Lima, Perú<span>Página de ejemplo. Las cifras, nombres y testimonios son datos de muestra y deben reemplazarse por los reales del gimnasio.</span></footer>
+</body>
+</html>
